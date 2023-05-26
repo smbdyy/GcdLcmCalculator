@@ -36,7 +36,8 @@ partial class MainForm
         // _numberAInput
         //
         _numberAInput.Location = new System.Drawing.Point(39, 66);
-        _numberAInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+        _numberAInput.Minimum = Decimal.One;
+        _numberAInput.Maximum = 10000;
         _numberAInput.Name = "_numberAInput";
         _numberAInput.Size = new System.Drawing.Size(92, 22);
         _numberAInput.TabIndex = 0;
@@ -44,7 +45,8 @@ partial class MainForm
         // _numberBInput
         //
         _numberBInput.Location = new System.Drawing.Point(205, 66);
-        _numberBInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+        _numberBInput.Minimum = Decimal.One;
+        _numberBInput.Maximum = 10000;
         _numberBInput.Name = "_numberBInput";
         _numberBInput.Size = new System.Drawing.Size(92, 22);
         _numberBInput.TabIndex = 1;
@@ -81,7 +83,7 @@ partial class MainForm
         // _inputDataFromTableButton
         //
         _inputDataFromTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-        _inputDataFromTableButton.Location = new System.Drawing.Point(55, 177);
+        _inputDataFromTableButton.Location = new System.Drawing.Point(55, 170);
         _inputDataFromTableButton.Name = "_inputDataFromTableButton";
         _inputDataFromTableButton.Size = new System.Drawing.Size(227, 33);
         _inputDataFromTableButton.TabIndex = 5;
