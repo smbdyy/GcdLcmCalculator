@@ -1,37 +1,32 @@
-﻿using Application.Exceptions;
+﻿using System.Text;
+using Application.Exceptions;
 
 namespace Application.Service;
 
 public static class GcdLcmCalculator
 {
-    public static int CalculateGcd(int a, int b)
+    public static string GetCalculationSteps(int a, int b)
     {
-        if (a < 0 || b < 0)
+        if (a <= 0 || b <= 0)
         {
-            throw IncorrectValueException.NegativeValue(a, b);
-        }
-        if (a == 0 && b == 0)
-        {
-            throw IncorrectValueException.ZerosInGcd();
+            throw IncorrectValueException.NonPositive(a, b);
         }
 
+        int aCopy = a;
+        int bCopy = b;
+
+        var builder = new StringBuilder($"Рассчитаем НОД чисел {a} и {b}, используя алгоритм Евклида с делением.\n");
+
+        int stepCounter = 1;
         while (b > 0)
         {
-            int tmp = b;
+            int temp = b;
             b = a % b;
-            a = tmp;
+            builder.Append($"{stepCounter}. b = a % b = {a} % {temp} = {b}; a = {temp}.\n");
+            a = temp;
         }
 
-        return a;
-    }
-
-    public static int CalculateLcm(int a, int b)
-    {
-        if (a == 0 || b == 0)
-        {
-            throw IncorrectValueException.ZeroInLcm(a, b);
-        }
-
-        return a / CalculateGcd(a, b) * b;
+        builder.Append($"НОД: {a}, соответственно НОК равен a * b / НОД(a, b) = {aCopy / a * bCopy}.\n");
+        return builder.ToString();
     }
 }
