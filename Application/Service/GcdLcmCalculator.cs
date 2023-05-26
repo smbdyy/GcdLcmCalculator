@@ -23,6 +23,7 @@ public static class GcdLcmCalculator
             int temp = b;
             b = a % b;
             builder.Append($"{stepCounter}. b = a % b = {a} % {temp} = {b}; a = {temp}.\n");
+            stepCounter++;
             a = temp;
         }
 
