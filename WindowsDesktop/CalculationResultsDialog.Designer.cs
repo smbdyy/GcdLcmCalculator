@@ -38,6 +38,7 @@ partial class CalculationResultsDialog
         _saveResultsButton.TabIndex = 1;
         _saveResultsButton.Text = "Сохранить результаты";
         _saveResultsButton.UseVisualStyleBackColor = true;
+        _saveResultsButton.Click += new EventHandler(SaveToWord);
         //
         // CalculationResultsDialog
         //
@@ -52,6 +53,7 @@ partial class CalculationResultsDialog
         MinimizeBox = false;
         Name = "CalculationResultsDialog";
         Text = "Результаты";
+        TopMost = true;
         ResumeLayout(false);
     }
 
