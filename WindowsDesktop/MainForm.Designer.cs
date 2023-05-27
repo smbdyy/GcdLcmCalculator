@@ -79,6 +79,7 @@ partial class MainForm
         _calculateButton.TabIndex = 4;
         _calculateButton.Text = "Вычислить НОД и НОК";
         _calculateButton.UseVisualStyleBackColor = true;
+        _calculateButton.Click += new EventHandler(ShowCalculationResults);
         //
         // _inputDataFromTableButton
         //
@@ -94,7 +95,7 @@ partial class MainForm
         //
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(349, 238);
+        ClientSize = new System.Drawing.Size(350, 240);
         Controls.Add(_inputDataFromTableButton);
         Controls.Add(_calculateButton);
         Controls.Add(_numberBLabel);

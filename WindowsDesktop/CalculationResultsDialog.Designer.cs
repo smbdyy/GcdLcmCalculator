@@ -44,7 +44,7 @@ partial class CalculationResultsDialog
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         AutoScaleMode = AutoScaleMode.Font;
         AutoSize = true;
-        ClientSize = new System.Drawing.Size(344, 190);
+        ClientSize = new System.Drawing.Size(344, 100);
         Controls.Add(_saveResultsButton);
         Controls.Add(_messageBox);
         FormBorderStyle = FormBorderStyle.FixedSingle;
