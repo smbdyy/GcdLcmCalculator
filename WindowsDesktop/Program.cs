@@ -6,6 +6,6 @@ static class Program
     static void Main()
     {
         ApplicationConfiguration.Initialize();
-        System.Windows.Forms.Application.Run(new MainForm());
+        Application.Run(new MainForm());
     }
 }
