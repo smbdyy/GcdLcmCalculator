@@ -1,4 +1,4 @@
-﻿namespace Application.Exceptions;
+﻿namespace GcdLcmCalculatorApplication.Exceptions;
 
 public class SpreadsheetReadingException : ApplicationException
 {

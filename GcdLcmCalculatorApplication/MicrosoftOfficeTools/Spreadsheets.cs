@@ -1,8 +1,8 @@
-﻿using Application.Exceptions;
-using DocumentFormat.OpenXml.Packaging;
+﻿using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using GcdLcmCalculatorApplication.Exceptions;
 
-namespace Application.MicrosoftOfficeTools;
+namespace GcdLcmCalculatorApplication.MicrosoftOfficeTools;
 
 public static class Spreadsheets
 {

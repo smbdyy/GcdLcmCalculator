@@ -2,7 +2,7 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 
-namespace Application.MicrosoftOfficeTools;
+namespace GcdLcmCalculatorApplication.MicrosoftOfficeTools;
 
 public static class Word
 {

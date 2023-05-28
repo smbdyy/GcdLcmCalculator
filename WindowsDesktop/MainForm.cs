@@ -1,5 +1,5 @@
-using Application.MicrosoftOfficeTools;
-using Application.Service;
+using GcdLcmCalculatorApplication.MicrosoftOfficeTools;
+using GcdLcmCalculatorApplication.Service;
 
 namespace WindowsDesktop;
 

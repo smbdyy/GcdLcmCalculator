@@ -1,4 +1,4 @@
-﻿using Application.MicrosoftOfficeTools;
+﻿using GcdLcmCalculatorApplication.MicrosoftOfficeTools;
 
 namespace WindowsDesktop;
 

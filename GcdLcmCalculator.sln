@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{CA324086-E05F-45D8-BCE9-9162B04908C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GcdLcmCalculatorApplication", "GcdLcmCalculatorApplication\GcdLcmCalculatorApplication.csproj", "{CA324086-E05F-45D8-BCE9-9162B04908C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDesktop", "WindowsDesktop\WindowsDesktop.csproj", "{57521EB5-D630-43C1-920D-CB81B222C381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinApp", "XamarinApp\XamarinApp\XamarinApp.csproj", "{108BF03D-CAE7-49EB-BE41-2EE15846543E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinApp.Droid", "XamarinApp\XamarinApp.Droid\XamarinApp.Droid.csproj", "{D77A5F73-EF16-4B10-9B4F-9F13BE5F9B95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,13 @@ Global
 		{57521EB5-D630-43C1-920D-CB81B222C381}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57521EB5-D630-43C1-920D-CB81B222C381}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57521EB5-D630-43C1-920D-CB81B222C381}.Release|Any CPU.Build.0 = Release|Any CPU
+		{108BF03D-CAE7-49EB-BE41-2EE15846543E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108BF03D-CAE7-49EB-BE41-2EE15846543E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108BF03D-CAE7-49EB-BE41-2EE15846543E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108BF03D-CAE7-49EB-BE41-2EE15846543E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77A5F73-EF16-4B10-9B4F-9F13BE5F9B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77A5F73-EF16-4B10-9B4F-9F13BE5F9B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77A5F73-EF16-4B10-9B4F-9F13BE5F9B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77A5F73-EF16-4B10-9B4F-9F13BE5F9B95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

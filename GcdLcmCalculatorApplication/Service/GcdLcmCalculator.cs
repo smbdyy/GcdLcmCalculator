@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using Application.Exceptions;
+using GcdLcmCalculatorApplication.Exceptions;
 
-namespace Application.Service;
+namespace GcdLcmCalculatorApplication.Service;
 
 public static class GcdLcmCalculator
 {
