@@ -6,5 +6,5 @@ public class SpreadsheetReadingException : ApplicationException
         : base(message) { }
 
     public SpreadsheetReadingException()
-        : base("Ошибка при чтении таблицы") { }
+        : this("Ошибка при чтении таблицы") { }
 }
