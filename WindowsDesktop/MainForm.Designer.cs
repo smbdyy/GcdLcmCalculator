@@ -90,6 +90,7 @@ partial class MainForm
         _inputDataFromTableButton.TabIndex = 5;
         _inputDataFromTableButton.Text = "Ввести данные из таблицы";
         _inputDataFromTableButton.UseVisualStyleBackColor = true;
+        _inputDataFromTableButton.Click += new EventHandler(LoadNumbersFromSpreadsheet);
         //
         // MainForm
         //
