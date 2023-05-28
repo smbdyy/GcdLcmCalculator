@@ -1,4 +1,5 @@
 ﻿using System;
+using GcdLcmCalculatorApplication.Service;
 using Xamarin.Forms;
 
 namespace XamarinApp
@@ -10,15 +11,17 @@ namespace XamarinApp
             InitializeComponent();
         }
 
-        private void CalculateButton_Clicked(object sender, EventArgs e)
+        private async void CalculateButton_Clicked(object sender, EventArgs e)
         {
-            if (int.TryParse(NumberAEntry.Text, out var number1) && int.TryParse(NumberBEntry.Text, out var number2))
+            ResultLabel.Text = "";
+            if (int.TryParse(NumberAEntry.Text, out var numberA) && int.TryParse(NumberBEntry.Text, out var numberB)
+                                                                 && numberA > 0 && numberB > 0)
             {
-                ResultLabel.Text = $"Введенные числа: {number1}, {number2}";
+                await Navigation.PushAsync(new ResultsPage(GcdLcmCalculator.GetCalculationSteps(numberA, numberB)));
             }
             else
             {
-                ResultLabel.Text = "Ошибка: введите два целых числа.";
+                ResultLabel.Text = "Ошибка: введите два натуральных числа.";
             }
         }
     }
