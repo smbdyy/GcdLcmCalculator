@@ -26,7 +26,7 @@ public static class Spreadsheets
         }
 
         int a = GetCellValue(sheetData, "A1");
-        int b = GetCellValue(sheetData, "A2");
+        int b = GetCellValue(sheetData, "B1");
 
         return new Tuple<int, int>(a, b);
     }
@@ -34,11 +34,7 @@ public static class Spreadsheets
     public static int GetCellValue(SheetData sheetData, string cellReference)
     {
         Cell cell = GetCell(sheetData, cellReference);
-        if (cell.DataType != null && cell.DataType.Value == CellValues.Number && cell.CellValue != null)
-        {
-            return int.Parse(cell.CellValue.Text);
-        }
-        return 0;
+        return cell.CellValue != null ? int.Parse(cell.CellValue.Text) : 0;
     }
 
     public static Cell GetCell(SheetData sheetData, string cellReference)
