@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinApp.MainPage">
+    <StackLayout VerticalOptions="Center">
+        <Label Text="Наибольший общий делитель и наименьшее общее кратное" HorizontalOptions="Center" FontSize="Title"/>
+        <Entry x:Name="NumberAEntry" Placeholder="Введите первое число" Keyboard="Numeric"/>
+        <Entry x:Name="NumberBEntry" Placeholder="Введите второе число" Keyboard="Numeric"/>
+        <Button Text="Вычислить" Clicked="CalculateButton_Clicked" HorizontalOptions="Center"/>
+        <Label x:Name="ResultLabel" HorizontalOptions="Center" FontSize="Title"/>
+    </StackLayout>
+</ContentPage>
