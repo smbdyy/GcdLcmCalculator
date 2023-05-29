@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using GcdLcmCalculatorApplication.Exceptions;
+using GcdLcmCalculatorApplication.Models;
 
 namespace GcdLcmCalculatorApplication.Service;
 
@@ -7,10 +8,7 @@ public static class GcdLcmCalculator
 {
     public static string GetCalculationSteps(int a, int b)
     {
-        if (a <= 0 || b <= 0)
-        {
-            throw IncorrectValueException.NonPositive(a, b);
-        }
+        ThrowIfValuesInvalid(a, b);
 
         int aCopy = a;
         int bCopy = b;
@@ -29,5 +27,30 @@ public static class GcdLcmCalculator
 
         builder.Append($"НОД: {a}, соответственно НОК равен a * b / НОД(a, b) = {aCopy / a * bCopy}.\n");
         return builder.ToString();
+    }
+
+    public static GcdLcmValues CalculateValues(int a, int b)
+    {
+        ThrowIfValuesInvalid(a, b);
+
+        int aCopy = a;
+        int bCopy = b;
+
+        while (b > 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        return new GcdLcmValues(a, aCopy / a * bCopy);
+    }
+
+    public static void ThrowIfValuesInvalid(int a, int b)
+    {
+        if (a <= 0 || b <= 0)
+        {
+            throw IncorrectValueException.NonPositive(a, b);
+        }
     }
 }
