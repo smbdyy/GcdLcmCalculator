@@ -7,6 +7,8 @@
         <Entry x:Name="NumberAEntry" Placeholder="Введите первое число" Keyboard="Numeric"/>
         <Entry x:Name="NumberBEntry" Placeholder="Введите второе число" Keyboard="Numeric"/>
         <Button Text="Вычислить" Clicked="CalculateButton_Clicked" HorizontalOptions="Center"/>
+        <Button Text="Показать решение" Clicked="ShowSolutionButton_Clicked" HorizontalOptions="Center"/>
+        <Button Text="Ввести данные из таблицы" Clicked="LoadDataFromTable_Clicked" HorizontalOptions="Center"/>
         <Label x:Name="ResultLabel" HorizontalOptions="Center" FontSize="Title"/>
     </StackLayout>
 </ContentPage>
