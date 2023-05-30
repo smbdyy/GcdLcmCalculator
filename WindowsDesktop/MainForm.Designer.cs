@@ -15,11 +15,13 @@ partial class MainForm
     }
 
     private Button _calculateButton;
-    private Button _inputDataFromTableButton;
+    private Label _resultLabel;
+    private Button _showSolutionButton;
+    private Button _loadDataFromTableButton;
+    private Label _numberBLabel;
     private NumericUpDown _numberAInput;
     private NumericUpDown _numberBInput;
     private Label _numberALabel;
-    private Label _numberBLabel;
 
     private void InitializeComponent()
     {
@@ -27,8 +29,10 @@ partial class MainForm
         _numberBInput = new NumericUpDown();
         _numberALabel = new Label();
         _numberBLabel = new Label();
+        _showSolutionButton = new Button();
+        _loadDataFromTableButton = new Button();
+        _resultLabel = new Label();
         _calculateButton = new Button();
-        _inputDataFromTableButton = new Button();
         ((System.ComponentModel.ISupportInitialize)(_numberAInput)).BeginInit();
         ((System.ComponentModel.ISupportInitialize)(_numberBInput)).BeginInit();
         SuspendLayout();
@@ -36,8 +40,7 @@ partial class MainForm
         // _numberAInput
         //
         _numberAInput.Location = new System.Drawing.Point(39, 66);
-        _numberAInput.Minimum = Decimal.One;
-        _numberAInput.Maximum = 10000;
+        _numberAInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
         _numberAInput.Name = "_numberAInput";
         _numberAInput.Size = new System.Drawing.Size(92, 22);
         _numberAInput.TabIndex = 0;
@@ -45,8 +48,7 @@ partial class MainForm
         // _numberBInput
         //
         _numberBInput.Location = new System.Drawing.Point(205, 66);
-        _numberBInput.Minimum = Decimal.One;
-        _numberBInput.Maximum = 10000;
+        _numberBInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
         _numberBInput.Name = "_numberBInput";
         _numberBInput.Size = new System.Drawing.Size(92, 22);
         _numberBInput.TabIndex = 1;
@@ -70,35 +72,57 @@ partial class MainForm
         _numberBLabel.TabIndex = 3;
         _numberBLabel.Text = "Второе число";
         //
+        // _showSolutionButton
+        //
+        _showSolutionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        _showSolutionButton.Location = new System.Drawing.Point(55, 181);
+        _showSolutionButton.Name = "_showSolutionButton";
+        _showSolutionButton.Size = new System.Drawing.Size(227, 33);
+        _showSolutionButton.TabIndex = 4;
+        _showSolutionButton.Text = "Показать решение";
+        _showSolutionButton.UseVisualStyleBackColor = true;
+        _showSolutionButton.Click += new EventHandler(ShowSolutionButton_Clicked);
+        //
+        // _loadDataFromTableButton
+        //
+        _loadDataFromTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        _loadDataFromTableButton.Location = new System.Drawing.Point(55, 241);
+        _loadDataFromTableButton.Name = "_loadDataFromTableButton";
+        _loadDataFromTableButton.Size = new System.Drawing.Size(227, 33);
+        _loadDataFromTableButton.TabIndex = 5;
+        _loadDataFromTableButton.Text = "Ввести данные из таблицы";
+        _loadDataFromTableButton.UseVisualStyleBackColor = true;
+        _loadDataFromTableButton.Click += new EventHandler(LoadDataFromTableButton_Clicked);
+        //
+        // _resultLabel
+        //
+        _resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+        _resultLabel.Location = new System.Drawing.Point(29, 301);
+        _resultLabel.Name = "_resultLabel";
+        _resultLabel.Size = new System.Drawing.Size(281, 30);
+        _resultLabel.TabIndex = 6;
+        _resultLabel.Text = "";
+        _resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+        //
         // _calculateButton
         //
         _calculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-        _calculateButton.Location = new System.Drawing.Point(55, 123);
+        _calculateButton.Location = new System.Drawing.Point(55, 121);
         _calculateButton.Name = "_calculateButton";
         _calculateButton.Size = new System.Drawing.Size(227, 33);
-        _calculateButton.TabIndex = 4;
+        _calculateButton.TabIndex = 7;
         _calculateButton.Text = "Вычислить НОД и НОК";
         _calculateButton.UseVisualStyleBackColor = true;
-        _calculateButton.Click += new EventHandler(ShowCalculationResults);
-        //
-        // _inputDataFromTableButton
-        //
-        _inputDataFromTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-        _inputDataFromTableButton.Location = new System.Drawing.Point(55, 170);
-        _inputDataFromTableButton.Name = "_inputDataFromTableButton";
-        _inputDataFromTableButton.Size = new System.Drawing.Size(227, 33);
-        _inputDataFromTableButton.TabIndex = 5;
-        _inputDataFromTableButton.Text = "Ввести данные из таблицы";
-        _inputDataFromTableButton.UseVisualStyleBackColor = true;
-        _inputDataFromTableButton.Click += new EventHandler(LoadNumbersFromSpreadsheet);
         //
         // MainForm
         //
         AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(350, 240);
-        Controls.Add(_inputDataFromTableButton);
+        ClientSize = new System.Drawing.Size(349, 355);
         Controls.Add(_calculateButton);
+        Controls.Add(_resultLabel);
+        Controls.Add(_loadDataFromTableButton);
+        Controls.Add(_showSolutionButton);
         Controls.Add(_numberBLabel);
         Controls.Add(_numberALabel);
         Controls.Add(_numberBInput);

@@ -10,7 +10,7 @@ public partial class MainForm : Form
         InitializeComponent();
     }
 
-    private void ShowCalculationResults(object? sender, EventArgs eventArgs)
+    private void ShowSolutionButton_Clicked(object? sender, EventArgs eventArgs)
     {
         int a = (int)_numberAInput.Value;
         int b = (int)_numberBInput.Value;
@@ -21,7 +21,7 @@ public partial class MainForm : Form
         resultsDialog.ShowDialog();
     }
 
-    private void LoadNumbersFromSpreadsheet(object? sender, EventArgs eventArgs)
+    private void LoadDataFromTableButton_Clicked(object? sender, EventArgs eventArgs)
     {
         using var openFileDialog = new OpenFileDialog();
         openFileDialog.AddExtension = true;
