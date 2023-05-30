@@ -40,18 +40,24 @@ partial class MainForm
         // _numberAInput
         //
         _numberAInput.Location = new System.Drawing.Point(39, 66);
+        _numberAInput.Minimum = Decimal.One;
         _numberAInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+        _numberAInput.DecimalPlaces = 0;
         _numberAInput.Name = "_numberAInput";
         _numberAInput.Size = new System.Drawing.Size(92, 22);
         _numberAInput.TabIndex = 0;
+        _numberAInput.KeyPress += new KeyPressEventHandler(NumericUpDown_KeyPress);
         //
         // _numberBInput
         //
         _numberBInput.Location = new System.Drawing.Point(205, 66);
+        _numberBInput.Minimum = Decimal.One;
         _numberBInput.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+        _numberBInput.DecimalPlaces = 0;
         _numberBInput.Name = "_numberBInput";
         _numberBInput.Size = new System.Drawing.Size(92, 22);
         _numberBInput.TabIndex = 1;
+        _numberBInput.KeyPress += new KeyPressEventHandler(NumericUpDown_KeyPress);
         //
         // _numberALabel
         //
@@ -101,7 +107,7 @@ partial class MainForm
         _resultLabel.Name = "_resultLabel";
         _resultLabel.Size = new System.Drawing.Size(281, 30);
         _resultLabel.TabIndex = 6;
-        _resultLabel.Text = "";
+        _resultLabel.Text = string.Empty;
         _resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         //
         // _calculateButton
@@ -113,6 +119,7 @@ partial class MainForm
         _calculateButton.TabIndex = 7;
         _calculateButton.Text = "Вычислить НОД и НОК";
         _calculateButton.UseVisualStyleBackColor = true;
+        _calculateButton.Click += new EventHandler(CalculateButton_Clicked);
         //
         // MainForm
         //

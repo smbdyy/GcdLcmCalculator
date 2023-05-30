@@ -1,4 +1,5 @@
 using GcdLcmCalculatorApplication.MicrosoftOfficeTools;
+using GcdLcmCalculatorApplication.Models;
 using GcdLcmCalculatorApplication.Service;
 
 namespace WindowsDesktop;
@@ -12,6 +13,7 @@ public partial class MainForm : Form
 
     private void ShowSolutionButton_Clicked(object? sender, EventArgs eventArgs)
     {
+        _resultLabel.Text = string.Empty;
         int a = (int)_numberAInput.Value;
         int b = (int)_numberBInput.Value;
 
@@ -19,6 +21,24 @@ public partial class MainForm : Form
         var resultsDialog = new CalculationResultsDialog();
         resultsDialog.SetText(resultsText);
         resultsDialog.ShowDialog();
+    }
+
+    private void CalculateButton_Clicked(object? sender, EventArgs eventArgs)
+    {
+        int a = (int)_numberAInput.Value;
+        int b = (int)_numberBInput.Value;
+
+        GcdLcmValues values = GcdLcmCalculator.CalculateValues(a, b);
+        _resultLabel.Text = $"НОД: {values.Gcd}, НОК: {values.Lcm}";
+    }
+
+    private void NumericUpDown_KeyPress(object? sender, KeyPressEventArgs eventArgs)
+    {
+        var sep = Convert.ToChar(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+        if (eventArgs.KeyChar == sep)
+        {
+            eventArgs.Handled = true;
+        }
     }
 
     private void LoadDataFromTableButton_Clicked(object? sender, EventArgs eventArgs)
