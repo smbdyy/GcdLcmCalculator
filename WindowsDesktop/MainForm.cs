@@ -1,5 +1,6 @@
 using GcdLcmCalculatorApplication.MicrosoftOfficeTools;
 using GcdLcmCalculatorApplication.Models;
+using GcdLcmCalculatorApplication.Resources.Abstractions;
 using GcdLcmCalculatorApplication.Service;
 
 namespace WindowsDesktop;
@@ -9,6 +10,11 @@ public partial class MainForm : Form
     public MainForm()
     {
         InitializeComponent();
+    }
+
+    private void HelpButton_Clicked(object? sender, EventArgs eventArgs)
+    {
+        MessageBox.Show(ResourceLoader.Instructions);
     }
 
     private void ShowSolutionButton_Clicked(object? sender, EventArgs eventArgs)

@@ -1,4 +1,6 @@
-﻿namespace WindowsDesktop;
+﻿using System.ComponentModel;
+
+namespace WindowsDesktop;
 
 partial class MainForm
 {
@@ -137,6 +139,9 @@ partial class MainForm
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MaximizeBox = false;
         MinimizeBox = false;
+        HelpButton = true;
+        HelpButtonClicked += new CancelEventHandler(HelpButton_Clicked);
+        HelpRequested += new HelpEventHandler(HelpButton_Clicked);
         Name = "MainForm";
         SizeGripStyle = SizeGripStyle.Hide;
         Text = "GcdLcmCalculator";
