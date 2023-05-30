@@ -2,5 +2,5 @@
 
 public static class ResourceLoader
 {
-    private static string Instrctions { get; } = Resources.Instructions.Replace("\n", Environment.NewLine);
+    public static string Instructions { get; } = Resources.Instructions;
 }
