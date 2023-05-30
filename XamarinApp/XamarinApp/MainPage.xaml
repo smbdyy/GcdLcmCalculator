@@ -9,6 +9,7 @@
         <Button Text="Вычислить" Clicked="CalculateButton_Clicked" HorizontalOptions="Center"/>
         <Button Text="Показать решение" Clicked="ShowSolutionButton_Clicked" HorizontalOptions="Center"/>
         <Button Text="Ввести данные из таблицы" Clicked="LoadDataFromTable_Clicked" HorizontalOptions="Center"/>
+        <Button Text="Открыть инструкцию" Clicked="ShowInstructionsButton_Clicked" HorizontalOptions="Center"/>
         <Label x:Name="ResultLabel" HorizontalOptions="Center" FontSize="Title"/>
     </StackLayout>
 </ContentPage>

@@ -1,6 +1,7 @@
 ﻿using System;
 using GcdLcmCalculatorApplication.MicrosoftOfficeTools;
 using GcdLcmCalculatorApplication.Models;
+using GcdLcmCalculatorApplication.Resources.Abstractions;
 using GcdLcmCalculatorApplication.Service;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -15,7 +16,7 @@ namespace XamarinApp
             InitializeComponent();
         }
 
-        private async void ShowSolutionButton_Clicked(object sender, EventArgs e)
+        private async void ShowSolutionButton_Clicked(object? sender, EventArgs eventArgs)
         {
             ResultLabel.Text = "";
             if (TryParseNumbers(out var numberA, out var numberB))
@@ -28,7 +29,7 @@ namespace XamarinApp
             }
         }
 
-        private void CalculateButton_Clicked(object sender, EventArgs e)
+        private void CalculateButton_Clicked(object? sender, EventArgs eventArgs)
         {
             ResultLabel.Text = "";
             if (TryParseNumbers(out var numberA, out var numberB))
@@ -57,7 +58,7 @@ namespace XamarinApp
             return false;
         }
 
-        private async void LoadDataFromTable_Clicked(object sender, EventArgs e)
+        private async void LoadDataFromTable_Clicked(object? sender, EventArgs eventArgs)
         {
             try
             {
@@ -79,6 +80,11 @@ namespace XamarinApp
             {
                 ResultLabel.Text = "Произошла ошибка при открытии файла.";
             }
+        }
+
+        private async void ShowInstructionsButton_Clicked(object? sender, EventArgs eventArgs)
+        {
+            await Navigation.PushAsync(new ResultsPage(ResourceLoader.Instructions));
         }
     }
 }
