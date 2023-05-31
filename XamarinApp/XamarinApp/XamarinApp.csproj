@@ -19,4 +19,11 @@
     <ItemGroup>
       <ProjectReference Include="..\..\GcdLcmCalculatorApplication\GcdLcmCalculatorApplication.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="MessagePage.xaml.cs">
+        <DependentUpon>MessagePage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>

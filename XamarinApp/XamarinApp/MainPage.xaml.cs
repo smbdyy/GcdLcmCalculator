@@ -68,8 +68,8 @@ namespace XamarinApp
                 };
 
                 FileResult? fileResult = await FilePicker.PickAsync(options);
-
                 if (fileResult == null) return;
+
                 string filePath = fileResult.FullPath;
                 Tuple<int, int> numbers = Spreadsheets.ReadTwoNumbersFromTable(filePath);
 
@@ -84,7 +84,7 @@ namespace XamarinApp
 
         private async void ShowInstructionsButton_Clicked(object? sender, EventArgs eventArgs)
         {
-            await Navigation.PushAsync(new ResultsPage(ResourceLoader.Instructions));
+            await Navigation.PushAsync(new MessagePage(ResourceLoader.Instructions));
         }
     }
 }

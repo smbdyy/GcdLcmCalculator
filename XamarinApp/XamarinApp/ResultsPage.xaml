@@ -4,5 +4,6 @@
              x:Class="XamarinApp.ResultsPage">
     <StackLayout VerticalOptions="Center">
         <Label x:Name="ResultTextLabel" HorizontalOptions="Center" FontSize="Body"/>
+        <Button Text="Сохранить результаты" Clicked="SaveResultsButton_Clicked" HorizontalOptions="Center"/>
     </StackLayout>
 </ContentPage>
